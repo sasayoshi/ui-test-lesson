@@ -18,11 +18,12 @@ describe("Form", () => {
     const input = screen.getAllByPlaceholderText("Enter text")[0];
     await user.type(input, "Hello, World!"); // typeメソッドが非同期関数のためにawaitを使う
 
-    expect(screen.getByDisplayValue("Hello, World!")).toBeInTheDocument();
+    expect(screen.getByDisplayValue("Hello, World!")).toBeInTheDocument(); // "Hello, World!"というテキストがレンダリングされるかどうかを確認する
 
     const button = screen.getByRole("button");
     await user.click(button);
-    expect(alertSpy).toHaveBeenCalledWith("submitted: Hello, World!");
+    expect(alertSpy).toHaveBeenCalledWith("submitted: Hello, World!"); // モック関数が特定の引数を与えられて呼び出されたことを確認する
+
     alertSpy.mockRestore();
   });
 });
