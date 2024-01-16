@@ -20,9 +20,7 @@ export const Testing: Story = {
     const canvas = within(canvasElement);
     const input = canvas.getByRole("textbox");
     await expect(input).toHaveTextContent("");
-    await userEvent.type(input, "Hello, World!!!");
-    await expect(
-      canvas.getByDisplayValue("Hello, World!!")
-    ).toBeInTheDocument();
+    await userEvent.type(input, "Hello, World");
+    await expect(canvas.getByDisplayValue("Hello, World")).toBeInTheDocument();
   },
 };
