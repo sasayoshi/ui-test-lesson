@@ -1,4 +1,4 @@
-import { within } from "@testing-library/react";
+import { within } from "@storybook/testing-library";
 import Form from "./Form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect } from "@storybook/jest";
